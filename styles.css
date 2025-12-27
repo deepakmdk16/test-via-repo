@@ -91,3 +91,12 @@ body {
 .btn-equals:hover {
     background: #2eb34a;
 }
+
+.btn-function {
+    background: #007aff;
+    color: white;
+}
+
+.btn-function:hover {
+    background: #0062cc;
+}
