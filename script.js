@@ -45,9 +45,35 @@ function deleteLast() {
     updateDisplay();
 }
 
+function applyFunction(func) {
+    try {
+        let value = parseFloat(currentValue);
+        let result;
+
+        if (func === 'sin') {
+            result = Math.sin(value * Math.PI / 180);
+        } else if (func === 'cos') {
+            result = Math.cos(value * Math.PI / 180);
+        }
+
+        currentValue = result.toString();
+        hasCalculated = true;
+        updateDisplay();
+    } catch (error) {
+        currentValue = 'Error';
+        hasCalculated = true;
+        updateDisplay();
+    }
+}
+
 function calculate() {
     try {
-        const sanitizedExpression = currentValue.replace(/[^0-9+\-*/.]/g, '');
+        let expression = currentValue;
+
+        expression = expression.replace(/sin\(/g, 'Math.sin(');
+        expression = expression.replace(/cos\(/g, 'Math.cos(');
+
+        const sanitizedExpression = expression.replace(/[^0-9+\-*/.()Mathsinco]/g, '');
 
         if (['+', '-', '*', '/'].includes(sanitizedExpression.slice(-1))) {
             return;
