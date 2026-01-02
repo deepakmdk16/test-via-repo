@@ -1,0 +1,33 @@
+{
+  "name": "repo",
+  "version": "1.0.0",
+  "description": "A simple, elegant web-based calculator built with HTML, CSS, and JavaScript.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deepakmdk16/test-via-repo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deepakmdk16/test-via-repo/issues"
+  },
+  "homepage": "https://github.com/deepakmdk16/test-via-repo#readme",
+  "dependencies": {
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.1.2",
+    "vite": "^7.3.0"
+  }
+}
