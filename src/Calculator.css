@@ -6,21 +6,48 @@
   width: 320px;
 }
 
+.calculator.scientific {
+  width: 480px;
+}
+
 .display {
   margin-bottom: 15px;
+  position: relative;
+}
+
+.mode-indicator {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 15px;
+  font-size: 12px;
+  color: #666;
+  font-weight: bold;
+}
+
+.mode-indicator span {
+  opacity: 0.3;
+  transition: opacity 0.3s;
+}
+
+.mode-indicator span.active {
+  opacity: 1;
+  color: #ff9500;
 }
 
 .display input {
   width: 100%;
-  height: 60px;
+  height: 70px;
   border: none;
   background: #f0f0f0;
   border-radius: 10px;
   text-align: right;
   padding: 0 15px;
-  font-size: 24px;
+  font-size: 28px;
   font-weight: bold;
   color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .buttons {
@@ -29,16 +56,29 @@
   gap: 10px;
 }
 
+.buttons.scientific-buttons {
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+}
+
 .btn {
-  height: 60px;
+  height: 55px;
   border: none;
   border-radius: 10px;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   cursor: pointer;
   background: #f9f9f9;
   color: #333;
   transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scientific-buttons .btn {
+  height: 50px;
+  font-size: 14px;
 }
 
 .btn:hover {
@@ -75,4 +115,46 @@
 
 .btn-equals:hover {
   background: #2eb34a;
+}
+
+.btn-function {
+  background: #e0e7ff;
+  color: #4f46e5;
+  font-weight: 600;
+}
+
+.btn-function:hover {
+  background: #c7d2fe;
+}
+
+.btn-memory {
+  background: #fef3c7;
+  color: #d97706;
+  font-weight: 600;
+}
+
+.btn-memory:hover {
+  background: #fde68a;
+}
+
+@media (max-width: 768px) {
+  .calculator.scientific {
+    width: 95%;
+    max-width: 480px;
+    padding: 15px;
+  }
+
+  .buttons.scientific-buttons {
+    gap: 6px;
+  }
+
+  .scientific-buttons .btn {
+    height: 45px;
+    font-size: 12px;
+  }
+
+  .display input {
+    font-size: 24px;
+    height: 60px;
+  }
 }
